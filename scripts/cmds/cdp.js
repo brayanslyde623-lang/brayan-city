@@ -5,11 +5,11 @@ module.exports = {
     name: "cdp",
     aliases: ["coupledp"],
     version: "1.0",
-    author: "Saimx69x",
+    author: "Christus",
     countDown: 5,
     role: 0,
-    shortDescription: "Random Couple DP",
-    longDescription: "Send random couple DP",
+    shortDescription: "DP de couple aléatoire",
+    longDescription: "Envoie un DP de couple aléatoire",
     category: "image",
     guide: "{pn}"
   },
@@ -21,7 +21,7 @@ module.exports = {
 
       api.sendMessage(
         {
-          body: "𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝐜𝐝𝐩! 😘✨️",
+          body: "💑 Voici ton DP de couple ! 😘✨",
           attachment: await Promise.all([
             global.utils.getStreamFromURL(boy),
             global.utils.getStreamFromURL(girl)
@@ -31,7 +31,7 @@ module.exports = {
         event.messageID
       );
     } catch (e) {
-      api.sendMessage("❌ Couldn't fetch Couple DP.", event.threadID, event.messageID);
+      api.sendMessage("❌ Impossible de récupérer le DP de couple.", event.threadID, event.messageID);
       console.error(e);
     }
   }
