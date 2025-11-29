@@ -8,18 +8,18 @@ const baseUrl = "https://raw.githubusercontent.com/Saim12678/Saim69/1a8068d7d283
 module.exports = {
   config: {
     name: "pair3",
-    author: "Saimx69x",
+    author: "Christus",
     category: "love",
     version: "1.0",
     role: 0,
     shortDescription: {
-      en: "💘 Generate a love match between you and another group member"
+      en: "💘 Génère une compatibilité amoureuse entre toi et un autre membre du groupe"
     },
     longDescription: {
-      en: "This command calculates a love match between you and a suitable member of the current group based on gender. Shows circular avatars, background, and love percentage."
+      en: "Cette commande calcule un match amoureux entre toi et un membre compatible du groupe en fonction du genre. Affiche les avatars circulaires, un fond, et un pourcentage d'amour."
     },
     guide: {
-      en: "{p}{n} — Use this command in a group to find a love match"
+      en: "{p}{n} — Utilise cette commande dans un groupe pour trouver ton partenaire"
     }
   },
 
@@ -33,7 +33,7 @@ module.exports = {
 
       const myData = users.find(user => user.id === event.senderID);
       if (!myData || !myData.gender) {
-        return api.sendMessage("⚠️ Could not determine your gender.", event.threadID, event.messageID);
+        return api.sendMessage("⚠️ Impossible de déterminer ton genre.", event.threadID, event.messageID);
       }
 
       const myGender = myData.gender.toUpperCase();
@@ -44,11 +44,11 @@ module.exports = {
       } else if (myGender === "FEMALE") {
         matchCandidates = users.filter(user => user.gender === "MALE" && user.id !== event.senderID);
       } else {
-        return api.sendMessage("⚠️ Your gender is undefined. Cannot find a match.", event.threadID, event.messageID);
+        return api.sendMessage("⚠️ Ton genre est indéfini. Impossible de trouver un match.", event.threadID, event.messageID);
       }
 
       if (matchCandidates.length === 0) {
-        return api.sendMessage("❌ No suitable match found in the group.", event.threadID, event.messageID);
+        return api.sendMessage("❌ Aucun partenaire compatible trouvé dans ce groupe.", event.threadID, event.messageID);
       }
 
       const selectedMatch = matchCandidates[Math.floor(Math.random() * matchCandidates.length)];
@@ -59,7 +59,7 @@ module.exports = {
         const { data } = await axios.get(`${baseUrl}/21.json`);
         fontMap = data;
       } catch (e) {
-        console.error("Font load error:", e.message);
+        console.error("Erreur de chargement de police :", e.message);
         fontMap = {};
       }
 
@@ -109,14 +109,15 @@ module.exports = {
       out.on("finish", () => {
         const lovePercent = Math.floor(Math.random() * 31) + 70;
 
-        const message = `💞 𝗠𝗮𝘁𝗰𝗵𝗺𝗮𝗸𝗶𝗻𝗴 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲 💞
+        const message = `💞 𝗖𝗼𝗺𝗽𝗮𝘁𝗶𝗯𝗶𝗹𝗶𝘁𝗲́ 𝗮𝗺𝗼𝘂𝗿𝗲𝘂𝘀𝗲 𝗳𝗶𝗻𝗮𝗹𝗶𝘀𝗲́𝗲 💞
 
 🎀  ${senderName} ✨️
 🎀  ${matchName} ✨️
 
-🕊️ 𝓓𝓮𝓼𝓽𝓲𝓷𝔂 𝓱𝓪𝓼 𝔀𝓻𝓲𝓽𝓽𝓮𝓷 𝔂𝓸𝓾𝓻 𝓷𝓪𝓶𝓮𝓼 𝓽𝓸𝓰𝓮𝓽𝓱𝓮𝓻  🌹 𝓜𝓪𝔂 𝔂𝓸𝓾𝓻 𝓫𝓸𝓷𝓭 𝓵𝓪𝓼𝓽 𝓯𝓸𝓻𝓮𝓿𝓮𝓻  ✨️  
+🕊️ 𝓓𝓮𝓼𝓽𝓲𝓷 𝓿𝓸𝓾𝓼 𝓪 𝓾𝓷𝓲𝓼 🌹  
+✨️ 𝓠𝓾𝓮 𝓿𝓸𝓽𝓻𝓮 𝓵𝓲𝓪𝓲𝓼𝓸𝓷 𝓭𝓾𝓻𝓮 𝓮́𝓽𝓮𝓻𝓷𝓮𝓵𝓵𝓮𝓶𝓮𝓷𝓽 ✨️
 
-💘 𝙲𝚘𝚖𝚙𝚊𝚝𝚒𝚋𝚒𝚕𝚒𝚝𝚢: ${lovePercent}% 💘`;
+💘 𝙉𝙞𝙫𝙚𝙖𝙪 𝙙𝙚 𝙘𝙤𝙢𝙥𝙖𝙩𝙞𝙗𝙞𝙡𝙞𝙩𝙚́ : ${lovePercent}% 💘`;
 
         api.sendMessage(
           { body: message, attachment: fs.createReadStream(outputPath) },
@@ -127,7 +128,7 @@ module.exports = {
       });
 
     } catch (error) {
-      api.sendMessage("❌ An error occurred: " + error.message, event.threadID, event.messageID);
+      api.sendMessage("❌ Une erreur s'est produite : " + error.message, event.threadID, event.messageID);
     }
   },
 };
