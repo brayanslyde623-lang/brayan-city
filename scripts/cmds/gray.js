@@ -6,12 +6,12 @@ module.exports = {
     config: {
         name: "gray",
         version: "1.0",
-        author: "Saimx69x",
+        author: "Christus",
         countDown: 5,
         role: 0,
         category: "image",
-        description: "Convert replied image or URL to grayscale",
-        guide: "{pn} [ImgReply/imgLink]"
+        description: "Convertit l'image répondue ou l'URL en niveaux de gris",
+        guide: "{pn} [RéponseImg/lienImg]"
     },
 
     onStart: async function ({ api, args, message, event }) {
@@ -20,19 +20,19 @@ module.exports = {
 
             if (event.type === "message_reply") {
                 const attachment = event.messageReply.attachments?.[0];
-                if (!attachment) return message.reply("❌ | Please reply to an image.");
+                if (!attachment) return message.reply("❌ | Veuillez répondre à une image.");
                 if (!attachment.url || attachment.type !== "photo") {
-                    return message.reply("❌ | Only image replies are allowed. Videos or other files are not supported.");
+                    return message.reply("❌ | Seules les réponses d'images sont autorisées. Les vidéos ou autres fichiers ne sont pas supportés.");
                 }
                 imageUrl = attachment.url;
             } else if (args[0]?.startsWith("http")) {
                 imageUrl = args[0];
             } else {
-                return message.reply("❌ | Please reply to an image or provide an image URL.");
+                return message.reply("❌ | Veuillez répondre à une image ou fournir un lien d'image.");
             }
 
             api.setMessageReaction("🖤", event.messageID, () => {}, true);
-            const waitMsg = await message.reply("Converting to grayscale... <🖤");
+            const waitMsg = await message.reply("Conversion en niveaux de gris... <🖤");
 
             const GITHUB_RAW = "https://raw.githubusercontent.com/Saim-x69x/sakura/main/ApiUrl.json";
             const rawRes = await axios.get(GITHUB_RAW);
@@ -51,13 +51,13 @@ module.exports = {
             message.unsend(waitMsg.messageID);
             api.setMessageReaction("✅", event.messageID, () => {}, true);
             message.reply({
-                body: "Here's your grayscale image 🖤",
+                body: "Voici votre image en niveaux de gris 🖤",
                 attachment: fs.createReadStream(filePath)
             });
 
         } catch (error) {
             console.error(error);
-            message.reply("❌ | Failed to convert image to grayscale. Please try again later.");
+            message.reply("❌ | Impossible de convertir l'image en niveaux de gris. Veuillez réessayer plus tard.");
         }
     }
 };
