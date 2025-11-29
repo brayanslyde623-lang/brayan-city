@@ -6,17 +6,17 @@ module.exports = {
   config: {
     name: "time",
     version: "1.0",
-    author: "Saimx69x",
+    author: "Christus",
     role: 0,
     countDown: 3,
-    shortDescription: "Fetches stylish time card from API",
+    shortDescription: "Récupère une carte de temps stylée depuis l'API",
     category: "tools",
-    guide: "/time - Get current neon time card"
+    guide: "/time - Obtenir la carte du temps néon actuelle"
   },
 
   onStart: async ({ message }) => {
     try {
-      const wait = await message.reply("⚡ Fetching time card...");
+      const wait = await message.reply("⚡ Récupération de la carte du temps...");
 
       const apiUrl = "https://xsaim8x-xxx-api.onrender.com/api/time";
       const response = await axios.get(apiUrl, { responseType: "stream" });
@@ -38,8 +38,8 @@ module.exports = {
       return message.reply({ attachment: fs.createReadStream(filePath) });
 
     } catch (err) {
-      console.error("Time command error:", err.message);
-      return message.reply("❌ Failed to fetch time card.");
+      console.error("Erreur commande time:", err.message);
+      return message.reply("❌ Échec de la récupération de la carte du temps.");
     }
   }
 };
