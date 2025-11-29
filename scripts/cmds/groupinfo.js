@@ -7,12 +7,12 @@ module.exports = {
     name: "groupinfo",
     aliases: ["boxinfo"],
     version: "1.0",
-    author: "Saimx69x",
+    author: "Christus",
     countDown: 5,
     role: 0,
-    shortDescription: "View all info about this group",
-    longDescription: "Get the full details of your group such as name, ID, member count, gender stats, and admin list.",
-    category: "group",
+    shortDescription: "Voir toutes les informations sur ce groupe",
+    longDescription: "Obtenez tous les détails de votre groupe tels que le nom, l'ID, le nombre de membres, les statistiques de genre et la liste des admins.",
+    category: "groupe",
   },
 
   onStart: async function ({ api, event }) {
@@ -36,27 +36,27 @@ module.exports = {
         adminList.push(info[admin.id].name);
       }
 
-      const approvalMode = threadInfo.approvalMode ? "✅ On" : "❌ Off";
+      const approvalMode = threadInfo.approvalMode ? "✅ Activé" : "❌ Désactivé";
       const emoji = threadInfo.emoji || "👍";
       const imageURL = threadInfo.imageSrc || null;
       const msg = 
-`✨ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐍𝐅𝐎 ✨
+`✨ 𝐈𝐍𝐅𝐎 𝐆𝐑𝐎𝐔𝐏𝐄 ✨
 ━━━━━━━━━━━━━━━
-🏷️ 𝗡𝗮𝗺𝗲: ${threadInfo.threadName || "Unnamed Group"}
-🆔 𝗜𝗗: ${threadInfo.threadID}
-💬 𝗘𝗺𝗼𝗷𝗶: ${emoji}
-💭 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝘀: ${threadInfo.messageCount.toLocaleString()}
-👥 𝗠𝗲𝗺𝗯𝗲𝗿𝘀: ${memCount}
-👨 𝗠𝗮𝗹𝗲𝘀: ${genderMale.length}
-👩 𝗙𝗲𝗺𝗮𝗹𝗲𝘀: ${genderFemale.length}
-❔ 𝗨𝗻𝗸𝗻𝗼𝘄𝗻: ${genderUnknown.length}
-🛡️ 𝗔𝗱𝗺𝗶𝗻 𝗖𝗼𝘂𝗻𝘁: ${threadInfo.adminIDs.length}
-🔒 𝗔𝗽𝗽𝗿𝗼𝘃𝗮𝗹 𝗠𝗼𝗱𝗲: ${approvalMode}
+🏷️ Nom: ${threadInfo.threadName || "Groupe sans nom"}
+🆔 ID: ${threadInfo.threadID}
+💬 Emoji: ${emoji}
+💭 Messages: ${threadInfo.messageCount.toLocaleString()}
+👥 Membres: ${memCount}
+👨 Hommes: ${genderMale.length}
+👩 Femmes: ${genderFemale.length}
+❔ Inconnu: ${genderUnknown.length}
+🛡️ Nombre d'admins: ${threadInfo.adminIDs.length}
+🔒 Mode d'approbation: ${approvalMode}
 ━━━━━━━━━━━━━━━
-👑 𝗔𝗱𝗺𝗶𝗻𝘀:
+👑 Admins:
 ${adminList.map(name => `• ${name}`).join("\n")}
 ━━━━━━━━━━━━━━━
-🧠 𝗠𝗮𝗱𝗲 𝗯𝘆 𝐒𝐚𝐢𝐦𝐱𝟔𝟗𝐱 💙`;
+🧠 Créé par Christus 💙`;
 
       const cachePath = path.join(__dirname, "cache", "groupinfo.jpg");
       fs.ensureDirSync(path.join(__dirname, "cache"));
@@ -80,7 +80,7 @@ ${adminList.map(name => `• ${name}`).join("\n")}
 
     } catch (err) {
       console.error(err);
-      api.sendMessage("❌ An error occurred while fetching group info.", event.threadID, event.messageID);
+      api.sendMessage("❌ Une erreur est survenue lors de la récupération des informations du groupe.", event.threadID, event.messageID);
     }
   },
 };
