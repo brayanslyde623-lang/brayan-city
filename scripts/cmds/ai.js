@@ -170,10 +170,10 @@ const handleAIRequest = async (api, event, userInput, message, isReply = false) 
 
     let finalReply = textReply || '✅ AI Response:';
     finalReply = finalReply
-      .replace(/🎀\s*𝗦𝗵𝗶𝘇𝘂/gi, '🎀 𝗖𝗵𝗿𝗶𝘀𝘁𝘂𝘀')
-      .replace(/Shizu/gi, 'Christus')
-      .replace(/Christuska/gi, 'Christus')
-      .replace(/Aryan Chauhan/gi, 'Christus');
+      .replace(/🎀\s*𝗦𝗵𝗶𝘇𝘂/gi, '🎀 Rayd')
+      .replace(/Shizu/gi, 'Rayd')
+      .replace(/Christuska/gi, 'Rayd')
+      .replace(/Aryan Chauhan/gi, 'Rayd');
 
     const attachments = [];
     if (genImageUrl) {
@@ -203,7 +203,7 @@ module.exports = {
   config: {
     name: 'ai',
     version: '3.2.0',
-    author: 'Christus',
+    author: 'Rayd',
     role: 0,
     category: 'ai',
     longDescription: { en: 'AI + YouTube + Edit: Chat, Images, Music, Video, and Image Editing' },
