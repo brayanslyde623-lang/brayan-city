@@ -25,16 +25,16 @@
     "ignoreCommand": []
   },
   "adminBot": [
-    "61577243652962",
-    "61580873491658"
+    "61584246495211",
+    "100088850810623"
   ],
   "developer": [
-    "61577243652962",
-    "61580873491658"
+    "61584246495211",
+    "100088850810623"
   ],
   "vipuser": [
-    "61577243652962",
-    "61580873491658"
+    "61584246495211",
+    "100088850810623"
   ],
   "reactBy": {
     "delete": ["🗑️", "❌", "😠", "😡", "😾"],
@@ -45,7 +45,7 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "🌹Rayd bot🌹",
+  "nickNameBot": "󱢏┊🅶𝐔𝐌𝐁𝐀𝐋𝐋⌯ II  BOT 』☜ヅ",
   "prefix": "•",
   "database": {
     "type": "mongodb",
