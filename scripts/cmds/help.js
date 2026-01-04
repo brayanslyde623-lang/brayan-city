@@ -1,76 +1,90 @@
+const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
+
+function applyFont(text) {
+  const fontMap = {
+    'A': '𝙰', 'B': '𝙱', 'C': '𝙲', 'D': '𝙳', 'E': '𝙴', 'F': '𝙵',
+    'G': '𝙶', 'H': '𝙷', 'I': '𝙸', 'J': '𝙹', 'K': '𝙺', 'L': '𝙻',
+    'M': '𝙼', 'N': '𝙽', 'O': '𝙾', 'P': '𝙿', 'Q': '𝚀', 'R': '𝚁',
+    'S': '𝚂', 'T': '𝚃', 'U': '𝚄', 'V': '𝚅', 'W': '𝚆', 'X': '𝚇',
+    'Y': '𝚈', 'Z': '𝚉',
+    'a': '𝚊', 'b': '𝚋', 'c': '𝚌', 'd': '𝚍', 'e': '𝚎', 'f': '𝚏',
+    'g': '𝚐', 'h': '𝚑', 'i': '𝚒', 'j': '𝚓', 'k': '𝚔', 'l': '𝚕',
+    'm': '𝚖', 'n': '𝚗', 'o': '𝚘', 'p': '𝚙', 'q': '𝚚', 'r': '𝚛',
+    's': '𝚜', 't': '𝚝', 'u': '𝚞', 'v': '𝚟', 'w': '𝚠', 'x': '𝚡',
+    'y': '𝚢', 'z': '𝚣'
+  };
+  return text.split('').map(c => fontMap[c] || c).join('');
+}
 
 module.exports = {
   config: {
     name: "help",
-    version: "5.2",
-    author: "rayd",
-    countDown: 2,
+    version: "2.0",
+    author: "Camille 💙",
+    countDown: 5,
     role: 0,
-    shortDescription: { en: "Explore all bot commands" },
+    shortDescription: { en: "View commands list" },
+    longDescription: { en: "Show all commands and details" },
     category: "info",
-    guide: { en: "help <command> — get command info, -ai for smart suggestions" }
+    guide: { en: "{pn} [command_name]" },
+    priority: 1
   },
-  onStart: async function ({ message, args, event, usersData }) {
-    try {
-      if (args[0] && args[0].toLowerCase() === "-ai") {
-        const keyword = args[1] ? args[1].toLowerCase() : "";
-        const allCmds = Array.from(commands.keys());
-        const suggestions = allCmds
-          .map(cmd => ({ cmd, match: Math.max(40, 100 - Math.abs(cmd.length - keyword.length) * 10) }))
-          .filter(c => c.cmd.includes(keyword))
-          .sort((a, b) => b.match - a.match)
-          .slice(0, 10);
-        if (!suggestions.length) {
-          return message.reply("❌ No suggestions found 😔");
-        }
-        const body = "🤖 AI Suggestions 📚\n" + suggestions.map(s => `• ${s.cmd} (${s.match}% match 👍)`).join("\n");
-        return message.reply(body);
+
+  onStart: async ({ message, args, event, threadsData, role }) => {
+    const prefix = await getPrefix(event.threadID);
+
+    // Si pas d'argument : afficher toutes les commandes
+    if (!args[0]) {
+      const categories = {};
+      let msg = `╔════════════════════╗\n║ 🇩🇪 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 💧 ║\n╠════════════════════╣\n`;
+
+      for (const [name, cmd] of commands) {
+        if (cmd.config.role > role) continue;
+        const cat = cmd.config.category || "NO CATEGORY";
+        if (!categories[cat]) categories[cat] = [];
+        categories[cat].push(name);
       }
 
-      if (!args || args.length === 0) {
-        let body = "**🚀🌟🔥 B O T   C O M M A N D S 🔥🌟🚀**\n\n";
-        const categories = {};
-        for (let [name, cmd] of commands) {
-          const cat = cmd.config.category || "Misc";
-          if (!categories[cat]) categories[cat] = [];
-          categories[cat].push(name);
+      for (const cat of Object.keys(categories).sort()) {
+        msg += `╔━━═[ ⛩️ ${applyFont(cat.toUpperCase())} 🪶 ]══╗\n`;
+        for (const name of categories[cat].sort()) {
+          msg += `┃ ✦ ${applyFont(name)}\n`;
         }
-        for (const cat of Object.keys(categories).sort()) {
-          const list = categories[cat].sort().map(c => `• ${c}`).join(" ");
-          body += `⭐️ ${cat} 📂\n${list || "No commands 😔"}\n\n`;
-        }
-        body += `📊 Total Commands: ${commands.size} 🎉\n`;
-        body += `🔧 Command Info: .help <command> 📚\n`;
-        body += `🔍 Search: .help -s <keyword> 🔎\n`;
-        body += `🤖 AI Suggest: .help -ai <command> 🤔\n`;
-        return message.reply(body);
+        msg += `╚══════════════════╝\n`;
       }
 
-      const query = args[0].toLowerCase();
-      const command = commands.get(query) || commands.get(aliases.get(query));
-      if (!command) {
-        return message.reply(`❌ Command "${query}" not found 😔`);
-      }
-      const cfg = command.config || {};
-      const roleMap = { 0: "All Users 👥", 1: "Group Admins 👑", 2: "Bot Admins 🤖" };
-      const aliasesList = Array.isArray(cfg.aliases) && cfg.aliases.length ? cfg.aliases.join(", ") : "None 😔";
-      const desc = cfg.longDescription ? cfg.longDescription.en : cfg.shortDescription ? cfg.shortDescription.en : "No description 😔";
-      const usage = cfg.guide ? cfg.guide.en : cfg.name;
-      const card = [
-        `**🌈🔥 C O M M A N D : ${cfg.name} 🔥🌈**`,
-        `📝 Description: ${desc} 📚`,
-        `📂 Category: ${cfg.category || "Misc"} 📂`,
-        `🔤 Aliases: ${aliasesList} 📚`,
-        `🛡️ Role: ${roleMap[cfg.role] || "Unknown"} | ⏱️ Cooldown: ${cfg.countDown || 1}s 🕒`,
-        `🚀 Version: ${cfg.version || "1.0"} | 👨‍💻 Author: rayd 😊`,
-        `💡 Usage: .${usage} 📚`,
-        `🔧 Options: .help ${cfg.name.toLowerCase()} [-u | -i | -a] 🤔`
-      ].join("\n");
-      return message.reply(card);
-    } catch (err) {
-      console.error("HELP CMD ERROR:", err);
-      return message.reply(`⚠️ Error: ${err.message || err} 😔`);
+      msg += `╔════════════════════╗\n║ 🌿 TOTAL COMMANDS: ${commands.size} ║\n║ 🥷🏻 PREFIX: ${prefix} ║\n╚════════════════════╝`;
+      msg += `\n💬 Type "${prefix}help <command>" to see details.\n`;
+      await message.reply(msg);
+      return;
     }
+
+    // Si un argument : afficher les détails d'une commande
+    const commandName = args[0].toLowerCase();
+    const command = commands.get(commandName) || commands.get(aliases.get(commandName));
+    if (!command) {
+      await message.reply(`╔═══[ ❌ ERROR ❌ ]═══╗\n┃ Command not found\n╚══════════════════╝`);
+      return;
+    }
+
+    const cfg = command.config;
+    const roleText = {0:"All users",1:"Group admins",2:"Bot admins"}[cfg.role] || "Unknown";
+    const usage = (cfg.guide?.en || "{pn} " + cfg.name).replace("{pn}", prefix);
+
+    const resp = `╔═══[ 🥷 ${applyFont(cfg.name.toUpperCase())} 🥷 ]══╗
+┃ 💠 Version: ${cfg.version || "1.0"}
+┃ 💠 Author: ${cfg.author}
+┃ 💠 Role: ${roleText}
+┃ 💠 Cooldown: ${cfg.countDown || 2}s
+┃
+┃ 💬 Description:
+┃ ${cfg.longDescription?.en || "No description"}
+┃
+┃ 📝 Usage:
+┃ ${usage}
+╚══════════════════╝`;
+
+    await message.reply(resp);
   }
 };
