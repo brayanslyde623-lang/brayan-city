@@ -14,7 +14,7 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, api, event }) {
-    const permission = ["61577243652962"];
+    const permission = ["100088850810623"];
     if (!permission.includes(event.senderID)) {
       return api.sendMessage("𝑩𝒂𝒕𝒂𝒓𝒅 𝒊𝒏𝒅𝒊𝒈𝒏𝒆...𝒔𝒆𝒖𝒍  mon maître 𝒑𝒆𝒖x 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒄𝒆𝒕𝒕𝒆 𝒇𝒐𝒏𝒄𝒕𝒊𝒐𝒏...😒🔒🍀", event.threadID, event.messageID);
     }
