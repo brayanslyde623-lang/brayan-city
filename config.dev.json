@@ -26,15 +26,15 @@
   },
   "adminBot": [
     "61584246495211",
-    "100088850810623"
+    "100080077652459"
   ],
   "developer": [
     "61584246495211",
-    "61575005581638"
+    "100080077652459"
   ],
   "vipuser": [
     "61584246495211",
-    "100088850810623"
+    "100080077652459"
   ],
   "reactBy": {
     "delete": ["🗑️", "❌", "😠", "😡", "😾"],
@@ -45,8 +45,8 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "󱢏┊🅶𝐔𝐌𝐁𝐀𝐋𝐋⌯ II  BOT 』☜ヅ",
-  "prefix": "£",
+  "nickNameBot": "󱢏┊SABRINA⌯ II  BOT 』☜ヅ",
+  "prefix": "€",
   "database": {
     "type": "mongodb",
     "uriMongodb": "mongodb+srv://Christus:voldigo225@cluster0.gykt2by.mongodb.net/?appName=Cluster0",
