@@ -3,10 +3,9 @@ const co = require("fs-extra");
 const path = require("path");
 
 const ownerInfo = {
-  name: "۝Rayd Efoua🌹",
-  facebook: "https://www.facebook.com/efouarayd56",
-  telegram: "Rayd Efoua",
-  supportGroup: "🌝🌚"
+  name: "۝brayan 🩵",
+  facebook: "https://www.facebook.com/profile.php?id=61584246495211",
+  supportGroup: "🇨🇩💧🩵"
 };
 
 module.exports = {
