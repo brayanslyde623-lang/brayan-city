@@ -55,7 +55,7 @@ login.refreshCookieAfter=Actualisation du cookie après %1
 login.listenMqttClose=ListenMQTT fermé
 login.listenMqttCloseByUser=ListenMQTT fermé par l’utilisateur
 login.retryCheckLiveCookie=Nouvelle tentative de vérification du cookie... %1
-login.startBotSuccess=Le bot a démarré avec succès, commence la réception des messages des utilisateurs
+login.startBotSuccess=Le bot a démarré avec succès🫠, commence la réception des messages des utilisateurs
 
 version.tooOldVersion=Vous utilisez une version trop ancienne de Goat-Bot, veuillez mettre à jour vers la dernière version en tapant la commande : %1 dans cmd/console/terminal/shell
 
@@ -89,17 +89,17 @@ handlerEvents.userBanned=🚫 𝐕𝐨𝐮𝐬 𝐚𝐯𝐞𝐳 𝐞́𝐭𝐞́
 handlerEvents.threadBanned=🚫 𝐂𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐚 𝐞́𝐭𝐞́ 𝐛𝐚𝐧𝐧𝐢 𝐝𝐮 𝐛𝐨𝐭\n» 𝐑𝐚𝐢𝐬𝐨𝐧 : %1\n» 𝐇𝐞𝐮𝐫𝐞 : %2\n» 𝐈𝐃 𝐆𝐫𝐨𝐮𝐩𝐞 : %3
 handlerEvents.onlyAdminBox=🔒 𝐂𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐞𝐬𝐭 𝐚𝐜𝐭𝐮𝐞𝐥𝐥𝐞𝐦𝐞𝐧𝐭 𝐫𝐞𝐬𝐞𝐫𝐯𝐞́ 𝐚𝐮𝐱 𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫𝐬
 handlerEvents.onlyAdminBot=❌ | 𝐒𝐞𝐮𝐥 𝐥’𝐚𝐝𝐦𝐢𝐧 𝐝𝐮 𝐛𝐨𝐭 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
-handlerEvents.onlyDeveloperGlobal=⚙️ | 𝐒𝐞𝐮𝐥 𝐥𝐞 𝐝𝐞́𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐝𝐮 𝐛𝐨𝐭 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
+handlerEvents.onlyDeveloperGlobal=⚙️ | 𝐒𝐞𝐮𝐥 𝐥𝐞 𝐝𝐞́𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐝𝐮 𝐛𝐨𝐭 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭 😐
 handlerEvents.onlyVipUserGlobal=💎 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
 handlerEvents.commandNotFound=❌ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1" 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬, 𝐭𝐚𝐩𝐞𝐳 %2𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐭𝐨𝐮𝐭𝐞𝐬 𝐥𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬
 handlerEvents.commandNotFound2=❌ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬, 𝐭𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐥𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬
 
 # NEW KEY ADDED FOR SUGGESTION
-handlerEvents.commandNotFoundSuggestion=🧐 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬.\n\n𝐕𝐨𝐮𝐥𝐢𝐞𝐳-𝐯𝐨𝐮𝐬 𝐝𝐢𝐫𝐞 %2%1 ?
+handlerEvents.commandNotFoundSuggestion=🧐 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬.\n\n𝐕𝐨𝐮𝐥𝐢𝐞𝐳-𝐯𝐨𝐮𝐬 𝐝𝐢𝐫𝐞 %2%1 ?🫠
 # END NEW KEY
 
-handlerEvents.commandSyntaxError=⚠️ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐩𝐨𝐬𝐬𝐞̀𝐝𝐞 𝐮𝐧𝐞 𝐦𝐚𝐮𝐯𝐚𝐢𝐬𝐞 𝐬𝐲𝐧𝐭𝐚𝐱𝐞, 𝐭𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 %2 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐜𝐨𝐦𝐦𝐞𝐧𝐭 𝐥’𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫
-handlerEvents.onlyAdmin=❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"
+handlerEvents.commandSyntaxError=⚠️ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐩𝐨𝐬𝐬𝐞̀𝐝𝐞 𝐮𝐧𝐞 𝐦𝐚𝐮𝐯𝐚𝐢𝐬𝐞 𝐬𝐲𝐧𝐭𝐚𝐱𝐞, 𝐭𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 %2 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐜𝐨𝐦𝐦𝐞𝐧𝐭 𝐥’𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫👀
+handlerEvents.onlyAdmin=❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"👀😐
 handlerEvents.onlyAdminToUseOnReply=❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"
 handlerEvents.onlyAdminToUseOnReaction=❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"
 handlerEvents.onlyAdminBot2=💫 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"
