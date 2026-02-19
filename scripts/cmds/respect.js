@@ -10,12 +10,12 @@ module.exports = {
     guide: "-respect"
   },
   onStart: async function ({ api, event, args }) {
-    const ownerID = "61577243652962"; // Ton ID
+    const ownerID = "61582101006304"; // Ton ID
     const { senderID, threadID } = event;
 
     // Vérification de l'autorisation
     if (senderID !== ownerID) {
-      return api.sendMessage("🧏 Bâtards tu n'as pas le droit d'utiliser cette commande seule rayd le peux ❌", threadID);
+      return api.sendMessage("🧏 Bâtards tu n'as pas le droit d'utiliser cette commande seule seth le peux ❌", threadID);
     }
 
     try {
