@@ -30,10 +30,10 @@
   ],
   "developer": [
     "61584246495211",
-    "100080077652459"
+    "61582101006304"
   ],
   "vipuser": [
-    "61584246495211",
+    "61582101006304",
     "100080077652459"
   ],
   "reactBy": {
@@ -45,8 +45,8 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "󱢏┊SABRINA⌯ II  BOT 』☜ヅ",
-  "prefix": "€",
+  "nickNameBot": "󱢏┊CAMILA⌯ II  BOT 』☜ヅ",
+  "prefix": "∆",
   "database": {
     "type": "mongodb",
     "uriMongodb": "mongodb+srv://Christus:voldigo225@cluster0.gykt2by.mongodb.net/?appName=Cluster0",
