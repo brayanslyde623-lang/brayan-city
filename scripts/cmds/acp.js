@@ -78,7 +78,7 @@ module.exports = {
     results.forEach((result, index) => {
       const user = newTargetIDs[index];
       if (result.status === "fulfilled" && !JSON.parse(result.value).errors) {
-        success.push(`✅ ${actionType} avec succès : ${user.node.name} (${user.node.id})`);
+        success.push(`💚 ${actionType} avec succès : ${user.node.name} (${user.node.id})`);
       } else {
         failed.push(`❌ Échec : ${user.node.name} (${user.node.id})`);
       }
